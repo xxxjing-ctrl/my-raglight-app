@@ -1,0 +1,6 @@
+streamlit
+raglight
+langchain-huggingface
+langchain-chroma
+python-dotenv
+pypdf
