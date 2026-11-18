@@ -1,3 +1,10 @@
 streamlit
-raglight @ git+https://github.com/Bessouat40/RAGLight.git@ca4be6090295147c76778c5219e2815debb6207e
 langchain
+langchain-community
+langchain-openai
+langchain-huggingface
+langchain-chroma
+chromadb
+sentence-transformers
+pypdf
+python-dotenv
