@@ -1,5 +1,6 @@
 streamlit
 raglight
+langgraph==0.2.68
 langchain-huggingface
 langchain-chroma
 python-dotenv
