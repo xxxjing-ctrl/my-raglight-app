@@ -1,4 +1,5 @@
 import os
+os.environ["HF_ENDPOINT"] = "https://hf-mirror.com"
 import streamlit as st
 from dotenv import load_dotenv
 from raglight import RAGPipeline
@@ -10,6 +11,7 @@ from pypdf import PdfReader
 import tempfile
 
 # 网页配置
+
 st.set_page_config(page_title="我的 RAG 知识库")
 st.title("我的私有 RAG 知识库")
 
@@ -21,8 +23,7 @@ API_KEY = os.getenv("MY_API_KEY")
 @st.cache_resource
 def load_models():
     embeddings = HuggingFaceEmbeddings(
-        model_name="BAAI/bge-small-zh-v1.5",
-        model_kwargs={"local_files_only": True}
+        model_name="BAAI/bge-small-zh-v1.5"
     )
     llm = OpenAILLM(
         model_name="qwen-plus",
@@ -60,8 +61,7 @@ with st.sidebar:
                 # 存入向量库
                 vector_store = ChromaVectorStore(
                     collection_name="web_knowledge_base",
-                    embeddings_model=embeddings,
-                    persist_directory="./chroma_db",
+                    embeddings_model=embeddings
                 )
                 vector_store.add_documents(documents)
                 
