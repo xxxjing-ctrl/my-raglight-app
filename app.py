@@ -61,7 +61,7 @@ with st.sidebar:
                 # 存入向量库
                 vector_store = ChromaVectorStore(
                     collection_name="web_knowledge_base",
-                    embedding_model=embeddings
+                    embeddings=embeddings
                 )
                 vector_store.add_documents(documents)
                 
